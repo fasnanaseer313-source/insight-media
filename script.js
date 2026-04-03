@@ -153,6 +153,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
+    // Clone for Marquee continuous scrolling effect
+    const wwsGrid = document.getElementById('wws-grid');
+    const wwsTrack = document.getElementById('wws-marquee-track');
+    if (wwsGrid && wwsTrack) {
+        const clone = wwsGrid.cloneNode(true);
+        clone.id = 'wws-grid-clone';
+        clone.setAttribute('aria-hidden', 'true');
+        wwsTrack.appendChild(clone);
+    }
+
     const wwsCards = document.querySelectorAll('.wws-card');
     const detailPanel = document.getElementById('wws-detail-panel');
     const detailContent = document.getElementById('wws-detail-content');
@@ -248,4 +258,106 @@ document.addEventListener('DOMContentLoaded', () => {
             wwsBgImg.style.transform = `scale(1.08) translateY(${translate}px)`;
         }, { passive: true });
     }
+
+    // =======================================
+    // PREMIUM SERVICES — Scroll Merge Animation
+    // =======================================
+    const servicesWrapper = document.querySelector('.premium-services-wrapper');
+    const cards = document.querySelectorAll('.luxury-card');
+    const progressDots = document.querySelectorAll('.progress-dot');
+
+    if (servicesWrapper && cards.length > 0) {
+        window.addEventListener('scroll', () => {
+            const wrapperRect = servicesWrapper.getBoundingClientRect();
+            const wrapperHeight = wrapperRect.height;
+            const viewHeight = window.innerHeight;
+            
+            let totalProgress = -wrapperRect.top / (wrapperHeight - viewHeight);
+            totalProgress = Math.max(0, Math.min(1, totalProgress));
+
+            const mergeEnd = 0.3; // First 30% is the simultaneous merge
+            const peelStart = mergeEnd;
+            const peelZone = 1 - mergeEnd; // Remaining 70% for peeling
+            const numCards = cards.length;
+            const peelPerCard = peelZone / numCards;
+
+            cards.forEach((card, index) => {
+                const side = card.dataset.side; // "left" or "right"
+                
+                // --- PHASE 1: SIMULTANEOUS MERGE (0.0 to 0.3) ---
+                if (totalProgress <= mergeEnd) {
+                    const p = totalProgress / mergeEnd; // local 0 to 1
+                    const xMove = side === 'left' ? -150 + (150 * p) : 150 - (150 * p);
+                    const rotate = side === 'left' ? -10 + (10 * p) : 10 - (10 * p);
+                    const opacity = p;
+                    const blur = 10 * (1 - p);
+                    
+                    // Add a tiny stack offset so they aren't perfectly aligned
+                    const stackOffset = index * -2; // slightly higher as we go 
+
+                    card.style.transform = `translate(calc(-50% + ${xMove}%), calc(-50% + ${stackOffset}px)) rotate(${rotate}deg)`;
+                    card.style.opacity = opacity;
+                    card.style.filter = `blur(${blur}px)`;
+                    
+                    // Update dots: for merge phase, show first dot or interpolate?
+                    // Let's just highlight the first dot until peeling starts
+                    progressDots.forEach(dot => dot.classList.remove('active'));
+                    if (progressDots[0]) progressDots[0].classList.add('active');
+                    
+                } 
+                // --- PHASE 2: SEQUENTIAL PEELING (0.3 to 1.0) ---
+                else {
+                    const localPeelStart = peelStart + (index * peelPerCard);
+                    const localPeelEnd = localPeelStart + peelPerCard;
+                    
+                    if (totalProgress < localPeelStart) {
+                        // Card is still in the stack
+                        card.style.transform = `translate(-50%, calc(-50% + ${index * -2}px)) rotate(0deg)`;
+                        card.style.opacity = "1";
+                        card.style.filter = "blur(0px)";
+                    } 
+                    else if (totalProgress <= localPeelEnd) {
+                        // Card is currently peeling off
+                        const p = (totalProgress - localPeelStart) / peelPerCard; // 0 to 1
+                        const yMove = -150 * p; // slide up
+                        const rotate = -5 * p; // slight tilt
+                        const opacity = 1 - p;
+                        const blur = p * 4;
+
+                        card.style.transform = `translate(-50%, calc(-50% + ${index * -2}px + ${yMove}px)) rotate(${rotate}deg)`;
+                        card.style.opacity = opacity;
+                        card.style.filter = `blur(${blur}px)`;
+                        
+                        // Active dot
+                        progressDots.forEach(dot => dot.classList.remove('active'));
+                        if (progressDots[index]) progressDots[index].classList.add('active');
+                    } 
+                    else {
+                        // Card is gone
+                        card.style.opacity = "0";
+                        card.style.pointerEvents = "none";
+                    }
+                }
+            });
+        }, { passive: true });
+    }
+    // --- Core Focus — Flip & Bounce Animation ---
+    const focusCards = document.querySelectorAll('.focus-card.focus-reveal');
+    const focusObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Get the delay from the style attribute if it exists, otherwise use a default stagger
+                const delayStr = entry.target.style.transitionDelay || '0.1s';
+                const delay = parseFloat(delayStr) * 1000;
+                
+                setTimeout(() => {
+                    entry.target.classList.add('active-flip');
+                }, delay);
+                
+                focusObserver.unobserve(entry.target); // Trigger once
+            }
+        });
+    }, { threshold: 0.2 });
+
+    focusCards.forEach(card => focusObserver.observe(card));
 });
