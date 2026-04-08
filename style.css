@@ -883,22 +883,22 @@ section {
 }
 
 .card-icon {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 1rem;
-    align-self: center;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border-radius: 18px;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 2.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
-    color: var(--primary);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    transition: all 0.5s ease;
-    z-index: 2;
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    font-size: 2.5rem;
+    color: var(--glow);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 3;
 }
 
 /* Arrow icon inside Who We Support cards */
@@ -1686,13 +1686,14 @@ section {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
     aspect-ratio: 1 / 1;
-    min-height: 380px; 
+    min-height: 480px; 
     background: var(--primary);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0; /* Square frame */
-    padding: 2.5rem;
+    border-radius: 32px; /* Slightly rounded for premium look */
+    padding: 4rem 2.5rem;
     box-shadow: var(--shadow-premium);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 1;
@@ -1896,11 +1897,51 @@ section {
     background-color: var(--primary);
 }
 
+.why-us {
+    position: relative;
+    overflow: hidden;
+    padding: 10rem 0;
+}
+
+.why-us::after {
+    content: '';
+    position: absolute;
+    top: -150%;
+    left: -150%;
+    width: 400%;
+    height: 400%;
+    background: linear-gradient(
+        135deg,
+        transparent 35%,
+        rgba(255, 255, 255, 0.1) 45%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0.1) 55%,
+        transparent 65%
+    );
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transform: translate(-30%, -30%);
+    transition: opacity 0.5s ease;
+}
+
+.why-us.active::after {
+    opacity: 1;
+    animation: lightStrike 3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes lightStrike {
+    0% { transform: translate(-20%, -20%) rotate(0deg); }
+    100% { transform: translate(20%, 20%) rotate(0deg); }
+}
+
 .why-grid {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     gap: 6rem;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 @media (max-width: 900px) {
