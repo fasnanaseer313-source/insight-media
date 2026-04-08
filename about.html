@@ -27,63 +27,78 @@
         </div>
     </nav>
 
-    <header class="about-hero">
-        <div class="container" style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <div class="section-badge fade-in">Our Mission</div>
-            <h1 class="fade-in" style="font-size: 3.5rem; color: var(--primary); margin-bottom: 1.5rem;">About Insight Pathways</h1>
-            <p class="fade-in" style="font-size: 1.25rem; color: var(--text-muted); line-height: 1.8;">
+    <header class="subpage-hero" style="background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.7)), url('about_hero_sharp.png') center/cover no-repeat; padding: 140px 0 100px; color: var(--white); border-bottom: none;">
+        <div class="container">
+            <div class="section-badge fade-in" style="color: var(--glow); border-color: rgba(212, 175, 55, 0.3); background: rgba(212, 175, 55, 0.05);">Our Mission</div>
+            <h1 class="fade-in" style="color: var(--white); text-shadow: 0 10px 30px rgba(0,0,0,0.3);">About Insight Pathways</h1>
+            <p class="fade-in" style="color: rgba(255,255,255,0.8); max-width: 750px; margin: 0 auto;">
                 We focus on simplifying complex systems into clear, practical approaches that reduce complexity and support better program outcomes aligned with community priorities.
             </p>
         </div>
     </header>
 
     <section class="about-approach" style="padding: 6rem 0; background: var(--white);">
-        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+        <div class="container">
             <div class="section-header section-header-centered fade-in">
                 <h2>Our Approach</h2>
                 <p>We believe that management systems should empower communities, not constrain them with unnecessary complexity.</p>
             </div>
             
-            <div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 4rem;">
+            <div class="responsive-grid" style="margin-top: 4rem;">
                 <div class="about-cards-wrapper" style="display: flex; flex-direction: column; gap: 1.5rem;">
                     <!-- Card 1 -->
-                    <div class="about-feature-card fade-in">
-                        <div class="about-icon"><i class="fa-solid fa-users-gear"></i></div>
-                        <div>
-                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--primary);">Systems should support people</h3>
-                            <p style="color: var(--text-muted); font-size: 1rem; margin:0;">Technology and processes should make the work of community staff easier and more efficient.</p>
+                    <div class="about-feature-card glass-card reveal-bounce" style="position: relative; overflow: hidden; padding: 2.5rem; border-radius: 24px; min-height: 180px; display: flex; align-items: flex-start; gap: 2rem;">
+                        <div class="card-bg-layer" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:0;">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200" alt="People Support" style="width:100%; height:100%; object-fit:cover; opacity: 0.15; filter: contrast(1.2) grayscale(0.2);">
+                        </div>
+                        <div class="about-icon" style="position: relative; z-index: 1; flex-shrink: 0; background: var(--bg-soft); width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--glow);"><i class="fa-solid fa-users-gear"></i></div>
+                        <div style="position: relative; z-index: 1;">
+                            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem; color: var(--primary);">Systems should support people</h3>
+                            <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.6;">Technology and processes should make the work of community staff easier and more efficient.</p>
                         </div>
                     </div>
                     
                     <!-- Card 2 -->
-                    <div class="about-feature-card fade-in">
-                        <div class="about-icon"><i class="fa-solid fa-chart-simple"></i></div>
-                        <div>
-                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--primary);">Data should be useful</h3>
-                            <p style="color: var(--text-muted); font-size: 1rem; margin:0;">Information is only valuable if it leads to better understanding and better decisions.</p>
+                    <div class="about-feature-card glass-card reveal-bounce" style="position: relative; overflow: hidden; padding: 2.5rem; border-radius: 24px; min-height: 180px; display: flex; align-items: flex-start; gap: 2rem; transition-delay: 0.2s;">
+                        <div class="card-bg-layer" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:0;">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" alt="Useful Data" style="width:100%; height:100%; object-fit:cover; opacity: 0.15; filter: contrast(1.2) grayscale(0.2);">
+                        </div>
+                        <div class="about-icon" style="position: relative; z-index: 1; flex-shrink: 0; background: var(--bg-soft); width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--glow);"><i class="fa-solid fa-chart-simple"></i></div>
+                        <div style="position: relative; z-index: 1;">
+                            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem; color: var(--primary);">Data should be useful</h3>
+                            <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.6;">Information is only valuable if it leads to better understanding and better decisions.</p>
                         </div>
                     </div>
 
                     <!-- Card 3 -->
-                    <div class="about-feature-card fade-in">
-                        <div class="about-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
-                        <div>
-                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--primary);">One-size-fits-all models do not work</h3>
-                            <p style="color: var(--text-muted); font-size: 1rem; margin:0;">We respect the unique context and sovereignty of every First Nation and community program.</p>
+                    <div class="about-feature-card glass-card reveal-bounce" style="position: relative; overflow: hidden; padding: 2.5rem; border-radius: 24px; min-height: 180px; display: flex; align-items: flex-start; gap: 2rem; transition-delay: 0.4s;">
+                        <div class="card-bg-layer" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:0;">
+                            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1200" alt="Universal Diversity" style="width:100%; height:100%; object-fit:cover; opacity: 0.15; filter: contrast(1.2) grayscale(0.2);">
+                        </div>
+                        <div class="about-icon" style="position: relative; z-index: 1; flex-shrink: 0; background: var(--bg-soft); width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--glow);"><i class="fa-solid fa-puzzle-piece"></i></div>
+                        <div style="position: relative; z-index: 1;">
+                            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem; color: var(--primary);">One-size-fits-all models do not work</h3>
+                            <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.6;">We respect the unique context and sovereignty of every First Nation and community program.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="about-visual fade-in" style="display: flex; justify-content: center; align-items: center; padding: 4rem; background: linear-gradient(135deg, var(--bg-soft) 0%, rgba(212, 175, 55, 0.05) 100%); border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.03); height: 100%;">
-                    <div style="text-align: center; position: relative;">
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 150px; height: 150px; background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%); border-radius: 50%; filter: blur(20px); animation: pulseGlow 4s infinite alternate;"></div>
-                        <i class="fa-solid fa-route" style="font-size: 6rem; color: var(--primary); position: relative; z-index: 1;"></i>
-                        <h3 style="color: var(--primary); margin-top: 1.5rem; font-size: 1.8rem; position: relative; z-index: 1;">Clear Pathways</h3>
+                <div class="about-visual reveal-bounce" style="position: relative; overflow: hidden; display: flex; justify-content: center; align-items: center; padding: 4rem; background: var(--primary); border-radius: 32px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); min-height: 450px;">
+                    <div class="visual-bg" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:0;">
+                        <img src="clear_pathways_stunning_ai.png" alt="Clear Pathways Solution" style="width:100%; height:100%; object-fit:cover; opacity: 0.75; filter: brightness(0.9) contrast(1.1); transform: scale(1.05);">
+                        <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: radial-gradient(circle at center, transparent 0%, rgba(15, 23, 42, 0.95) 100%);"></div>
+                    </div>
+                    <div style="text-align: center; position: relative; z-index: 2;">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 220px; height: 220px; background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%); border-radius: 50%; filter: blur(30px); font-size: 6rem; color: var(--glow); animation: pulseGlow 4s infinite alternate;"></div>
+                        <i class="fa-solid fa-route" style="font-size: 7rem; color: var(--glow); line-height: 1; filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));"></i>
+                        <h3 style="color: var(--white); margin-top: 2rem; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 0.1em; font-family: 'Playfair Display', serif;">Clear Pathways</h3>
+                        <p style="color: rgba(255,255,255,0.7); font-size: 1.1rem; margin-top: 1rem; max-width: 300px; margin-left: auto; margin-right: auto;">Translating complex operations into intuitive community systems.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <footer class="footer">
         <div class="container">

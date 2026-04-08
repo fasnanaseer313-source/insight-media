@@ -9,7 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             navbar.classList.remove('scrolled');
         }
+        
+        // Update scroll variable for parallax
+        document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
     });
+
 
     // --- Mobile Menu Toggle ---
     const mobileToggle = document.getElementById('mobile-menu');
@@ -30,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Reveal Animations (Intersection Observer) ---
-    const revealElements = document.querySelectorAll('.reveal, .reveal-3d, .reveal-left, .reveal-right, .reveal-up');
+    const revealElements = document.querySelectorAll('.reveal, .reveal-3d, .reveal-left, .reveal-right, .reveal-up, .reveal-bounce');
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -77,13 +81,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 3D Mouse Tilt (Optional but Premium) ---
     const heroContent = document.querySelector('.hero-content');
-    if (heroContent) {
+    if (heroContent && window.matchMedia('(pointer: fine)').matches) {
         window.addEventListener('mousemove', (e) => {
-            const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
-            const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+            const xAxis = (window.innerWidth / 2 - e.clientX) / 50;
+            const yAxis = (window.innerHeight / 2 - e.clientY) / 50;
             heroContent.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
         });
     }
+
 
     // =======================================
     // WHO WE SUPPORT — 3D Cards & Detail Panel

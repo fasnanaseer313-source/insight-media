@@ -27,60 +27,84 @@
         </div>
     </nav>
 
-    <header class="section-hero" style="padding: 8rem 0 4rem; background: var(--bg-soft); text-align: center;">
-        <div class="container" style="max-width: 800px; margin: 0 auto;">
-            <div class="section-header fade-in" style="margin-bottom: 0;">
-                <div class="section-badge">Practical Solutions</div>
-                <h2>Our Services</h2>
-                <p>Practical, flexible, and tailored support for community programs. We focus on systems that work for people, not the other way around.</p>
-            </div>
+    <header class="subpage-hero" style="position: relative; overflow: hidden; padding: 12rem 0 8rem; background: var(--primary);">
+        <!-- Premium Background Image -->
+        <div class="hero-bg-media" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden;">
+            <img src="services_hero_bg_1775588106601.png" alt="Strategy Consultation" style="width:100%; height:100%; object-fit:cover; opacity: 0.55; transform: scale(1.05);">
+            <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to bottom, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.4) 100%);"></div>
+        </div>
+        
+        <div class="container" style="position: relative; z-index: 1; text-align: center;">
+            <div class="section-badge fade-in">Practical Solutions</div>
+            <h1 class="reveal-3d" style="color: var(--white); margin-bottom: 2rem;">Our Services</h1>
+            <p class="reveal-up" style="color: rgba(255,255,255,0.85); font-size: 1.3rem; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                Practical, flexible, and tailored support for community programs. We focus on systems that work for people, not the other way around.
+            </p>
         </div>
     </header>
 
-    <section class="core-services light-bg" style="padding: 4rem 0 6rem; background: var(--white);">
-        <div class="container" style="max-width: 1200px; margin: 0 auto;">
-            <div class="grid">
+
+
+    <section class="core-services" style="padding: 10rem 0; background: radial-gradient(circle at top left, var(--bg-soft) 0%, #FFFFFF 50%, rgba(212, 175, 55, 0.05) 100%); position: relative; overflow: hidden;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
+            <div class="focus-grid">
                 <!-- Service 1 -->
-                <div class="card fade-in">
-                    <div class="card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                    <h3>1. Practical System Design</h3>
-                    <p>We build the structural foundations for your program's daily operations.</p>
-                    <ul style="margin-top: 1.5rem; color: var(--neutral-medium);">
-                        <li style="margin-bottom: 0.5rem;">• Employment frameworks</li>
-                        <li style="margin-bottom: 0.5rem;">• Client tracking</li>
-                        <li style="margin-bottom: 0.5rem;">• Workflow improvements</li>
-                    </ul>
-                    <p style="margin-top: 1.5rem; font-weight: 600; color: var(--primary);">Outcome: Clear and manageable systems</p>
+                <div class="card focus-card reveal-bounce delay-1">
+                    <div class="card-bg-layer">
+                        <img src="service_system_square.png" alt="System Design Background" style="opacity: 0.4;">
+                    </div>
+                    <div class="card-overlay" style="background: linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.9) 100%);"></div>
+                    <div class="card-glow"></div>
+                    <div class="focus-content" style="text-align: center;">
+                        <div class="card-icon" style="color: var(--glow); font-size: 2.5rem; margin-bottom: 2rem;"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3 style="font-size: 1.8rem; line-height: 1.2; margin-bottom: 1.5rem;">Practical System Design</h3>
+                        <p style="font-size: 1.05rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">Structural foundations for community daily operations.</p>
+                        <div style="padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                            <span style="font-weight: 700; color: var(--glow); font-size: 0.85rem; text-transform: uppercase;">Outcome</span>
+                            <p style="margin-top: 0.4rem; color: var(--white); font-weight: 600; font-family: 'Playfair Display', serif;">Clear manageable systems</p>
+                        </div>
+                    </div>
                 </div>
-
+ 
                 <!-- Service 2 -->
-                <div class="card fade-in">
-                    <div class="card-icon"><i class="fa-solid fa-file-invoice"></i></div>
-                    <h3>2. Metrics and Reporting</h3>
-                    <p>Transforming complex data points into actionable insights for community growth.</p>
-                    <ul style="margin-top: 1.5rem; color: var(--neutral-medium);">
-                        <li style="margin-bottom: 0.5rem;">• Indicators beyond basic reporting</li>
-                        <li style="margin-bottom: 0.5rem;">• Visual dashboards</li>
-                        <li style="margin-bottom: 0.5rem;">• Reporting simplification</li>
-                    </ul>
-                    <p style="margin-top: 1.5rem; font-weight: 600; color: var(--primary);">Outcome: Useful and meaningful data</p>
+                <div class="card focus-card reveal-bounce delay-2">
+                    <div class="card-bg-layer">
+                        <img src="service_metrics_square.png" alt="Metrics Background" style="opacity: 0.4;">
+                    </div>
+                    <div class="card-overlay" style="background: linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.9) 100%);"></div>
+                    <div class="card-glow"></div>
+                    <div class="focus-content" style="text-align: center;">
+                        <div class="card-icon" style="color: var(--glow); font-size: 2.5rem; margin-bottom: 2rem;"><i class="fa-solid fa-file-invoice"></i></div>
+                        <h3 style="font-size: 1.8rem; line-height: 1.2; margin-bottom: 1.5rem;">Metrics and Reporting</h3>
+                        <p style="font-size: 1.05rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">Transforming data into actionable growth insights.</p>
+                        <div style="padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                            <span style="font-weight: 700; color: var(--glow); font-size: 0.85rem; text-transform: uppercase;">Outcome</span>
+                            <p style="margin-top: 0.4rem; color: var(--white); font-weight: 600; font-family: 'Playfair Display', serif;">Useful and meaningful data</p>
+                        </div>
+                    </div>
                 </div>
-
+ 
                 <!-- Service 3 -->
-                <div class="card fade-in">
-                    <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3>3. Data Sovereignty</h3>
-                    <p>Implementing the practical application of OCAP® principles within your digital systems.</p>
-                    <ul style="margin-top: 1.5rem; color: var(--neutral-medium);">
-                        <li style="margin-bottom: 0.5rem;">• Applying OCAP principles</li>
-                        <li style="margin-bottom: 0.5rem;">• Community-controlled data</li>
-                        <li style="margin-bottom: 0.5rem;">• Privacy-first systems</li>
-                    </ul>
-                    <p style="margin-top: 1.5rem; font-weight: 600; color: var(--primary);">Outcome: Trust and control over data</p>
+                <div class="card focus-card reveal-bounce delay-3">
+                    <div class="card-bg-layer">
+                        <img src="service_sovereignty_square.png" alt="Data Sovereignty Background" style="opacity: 0.4;">
+                    </div>
+                    <div class="card-overlay" style="background: linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.9) 100%);"></div>
+                    <div class="card-glow"></div>
+                    <div class="focus-content" style="text-align: center;">
+                        <div class="card-icon" style="color: var(--glow); font-size: 2.5rem; margin-bottom: 2rem;"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3 style="font-size: 1.8rem; line-height: 1.2; margin-bottom: 1.5rem;">Data Sovereignty</h3>
+                        <p style="font-size: 1.05rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">Practical application of OCAP® principles locally.</p>
+                        <div style="padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                            <span style="font-weight: 700; color: var(--glow); font-size: 0.85rem; text-transform: uppercase;">Outcome</span>
+                            <p style="margin-top: 0.4rem; color: var(--white); font-weight: 600; font-family: 'Playfair Display', serif;">Trust and control over data</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <section class="how-we-work hww-section">
         <div class="hww-bg">
@@ -96,66 +120,107 @@
             <div class="hww-wrapper">
                 <div class="hww-connector"></div>
                 <div class="hww-container">
-                    <div class="hww-card reveal-up" style="transition-delay: 0.1s;">
-                        <div class="hww-glow"></div>
-                        <div class="hww-icon-wrap"><i class="fa-solid fa-handshake"></i></div>
-                        <h3>Practical</h3>
-                        <p>Solutions that work in the real day-to-day operations of your team, not just on paper.</p>
+                    <div class="hww-card focus-card reveal-bounce">
+                        <div class="card-bg-layer">
+                            <img src="hww_practical.png" alt="Practical Solutions Background">
+                        </div>
+                        <div class="card-overlay"></div>
+                        <div class="card-glow"></div>
+                        <div class="focus-content">
+                            <div class="hww-icon-wrap" style="background: var(--glow); color: var(--primary);"><i class="fa-solid fa-handshake"></i></div>
+                            <h3>Practical</h3>
+                            <p>Solutions that work in the real day-to-day operations of your team, not just on paper.</p>
+                        </div>
                     </div>
-                    <div class="hww-card reveal-up" style="transition-delay: 0.3s;">
-                        <div class="hww-glow"></div>
-                        <div class="hww-icon-wrap"><i class="fa-solid fa-arrows-spin"></i></div>
-                        <h3>Flexible</h3>
-                        <p>Systems built to adapt to changing priorities and community realities without breaking.</p>
+                    <div class="hww-card focus-card reveal-bounce" style="transition-delay: 0.2s;">
+                        <div class="card-bg-layer">
+                            <img src="hww_flexible.png" alt="Flexible Systems Background">
+                        </div>
+                        <div class="card-overlay"></div>
+                        <div class="card-glow"></div>
+                        <div class="focus-content">
+                            <div class="hww-icon-wrap" style="background: var(--glow); color: var(--primary);"><i class="fa-solid fa-arrows-spin"></i></div>
+                            <h3>Flexible</h3>
+                            <p>Systems built to adapt to changing priorities and community realities without breaking.</p>
+                        </div>
                     </div>
-                    <div class="hww-card reveal-up" style="transition-delay: 0.5s;">
-                        <div class="hww-glow"></div>
-                        <div class="hww-icon-wrap"><i class="fa-solid fa-people-group"></i></div>
-                        <h3>Collaborative</h3>
-                        <p>Co-designed side-by-side with staff to ensure high usability, trust, and adoption.</p>
+                    <div class="hww-card focus-card reveal-bounce" style="transition-delay: 0.4s;">
+                        <div class="card-bg-layer">
+                            <img src="hww_collaborative.png" alt="Collaborative Co-design Background">
+                        </div>
+                        <div class="card-overlay"></div>
+                        <div class="card-glow"></div>
+                        <div class="focus-content">
+                            <div class="hww-icon-wrap" style="background: var(--glow); color: var(--primary);"><i class="fa-solid fa-people-group"></i></div>
+                            <h3>Collaborative</h3>
+                            <p>Co-designed side-by-side with staff to ensure high usability, trust, and adoption.</p>
+                        </div>
                     </div>
-                    <div class="hww-card reveal-up" style="transition-delay: 0.7s;">
-                        <div class="hww-glow"></div>
-                        <div class="hww-icon-wrap"><i class="fa-solid fa-magnifying-glass"></i></div>
-                        <h3>Simple</h3>
-                        <p>Eliminating unnecessary complexity so your team can focus on what truly matters.</p>
+                    <div class="hww-card focus-card reveal-bounce" style="transition-delay: 0.6s;">
+                        <div class="card-bg-layer">
+                            <img src="hww_simple.png" alt="Simple & Focused Background">
+                        </div>
+                        <div class="card-overlay"></div>
+                        <div class="card-glow"></div>
+                        <div class="focus-content">
+                            <div class="hww-icon-wrap" style="background: var(--glow); color: var(--primary);"><i class="fa-solid fa-magnifying-glass"></i></div>
+                            <h3>Simple</h3>
+                            <p>Eliminating unnecessary complexity so your team can focus on what truly matters.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="engagement-options" style="padding: 6rem 0; background: var(--bg-light);">
-        <div class="container" style="max-width: 1200px; margin: 0 auto;">
-            <div class="section-header section-header-centered fade-in">
-                <h2 style="font-size: 3rem; color: var(--primary);">Engagement Options</h2>
-                <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">We offer multiple ways to support your goals, depending on the scale and urgency of your needs.</p>
+    <section class="engagement-options" style="padding: 10rem 0; background: var(--bg-light); position: relative; overflow: hidden;">
+        <div class="container">
+            <div class="section-header section-header-centered reveal-up">
+                <div class="section-badge">How to Start</div>
+                <h2>Engagement Options</h2>
+                <p>We offer multiple ways to support your goals, depending on the scale and urgency of your needs.</p>
             </div>
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; margin-top: 4rem;">
+            <div class="responsive-grid" style="margin-top: 6rem;">
                 
                 <!-- Card 1 -->
-                <div class="resource-card fade-in" style="min-height: 380px; justify-content: center;">
-                    <div class="rc-bg" style="border-radius: 24px;">
-                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800" alt="Workshops and Advisory" style="filter: blur(2px); opacity: 0.85;">
-                        <div class="rc-overlay"></div>
+                <div class="resource-card reveal-left" style="min-height: 450px; justify-content: center; border-radius: 32px; overflow: hidden;">
+                    <div class="rc-bg">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200" alt="Workshops and Advisory" style="filter: brightness(0.4) contrast(1.1);">
+                        <div class="rc-overlay" style="background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.4) 100%);"></div>
                     </div>
-                    <div class="rc-content">
-                        <div class="rc-icon" style="margin-bottom: 1.5rem;"><i class="fa-solid fa-comments"></i></div>
-                        <h3 style="font-size: 1.8rem;">Workshops & Advisory</h3>
-                        <p style="max-width: 90%;">Focused sessions to solve specific challenges or provide strategic guidance on system improvements.</p>
+                    <div class="rc-content" style="padding: 3rem;">
+                        <div class="rc-icon" style="margin-bottom: 2rem; background: var(--glow); color: var(--primary); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 16px; font-size: 1.5rem;"><i class="fa-solid fa-comments-pie"></i></div>
+                        <h3 style="font-size: 2.2rem; color: var(--white); margin-bottom: 1.5rem;">Workshops & Advisory</h3>
+                        <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; line-height: 1.7;">Focused sessions to solve specific challenges or provide strategic guidance on system improvements.</p>
+                        <a href="contact.html" class="btn btn-premium" style="margin-top: 2rem; padding: 0.8rem 1.5rem; font-size: 0.9rem;">Learn More</a>
                     </div>
                 </div>
                 
                 <!-- Card 2 -->
-                <div class="resource-card fade-in" style="min-height: 380px; justify-content: center;">
-                    <div class="rc-bg" style="border-radius: 24px;">
-                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800" alt="Design Projects" style="filter: blur(2px); opacity: 0.85;">
-                        <div class="rc-overlay"></div>
+                <div class="resource-card reveal-up" style="min-height: 450px; justify-content: center; border-radius: 32px; overflow: hidden;">
+                    <div class="rc-bg">
+                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&q=80&w=1200" alt="Design Projects" style="filter: brightness(0.4) contrast(1.1);">
+                        <div class="rc-overlay" style="background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.4) 100%);"></div>
                     </div>
-                    <div class="rc-content">
-                        <div class="rc-icon" style="margin-bottom: 1.5rem;"><i class="fa-solid fa-pen-ruler"></i></div>
-                        <h3 style="font-size: 1.8rem;">Design Projects</h3>
-                        <p style="max-width: 90%;">Full implementation of client tracking systems, employment frameworks, or dashboard solutions.</p>
+                    <div class="rc-content" style="padding: 3rem;">
+                        <div class="rc-icon" style="margin-bottom: 2rem; background: var(--glow); color: var(--primary); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 16px; font-size: 1.5rem;"><i class="fa-solid fa-pen-nib"></i></div>
+                        <h3 style="font-size: 2.2rem; color: var(--white); margin-bottom: 1.5rem;">Design Projects</h3>
+                        <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; line-height: 1.7;">Full implementation of client tracking systems, employment frameworks, or dashboard solutions.</p>
+                        <a href="contact.html" class="btn btn-premium" style="margin-top: 2rem; padding: 0.8rem 1.5rem; font-size: 0.9rem;">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="resource-card reveal-right" style="min-height: 450px; justify-content: center; border-radius: 32px; overflow: hidden;">
+                    <div class="rc-bg">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=800" alt="On-Retainer Support" style="filter: brightness(0.4) contrast(1.1);">
+                        <div class="rc-overlay" style="background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.4) 100%);"></div>
+                    </div>
+                    <div class="rc-content" style="padding: 3rem;">
+                        <div class="rc-icon" style="margin-bottom: 2rem; background: var(--glow); color: var(--primary); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 16px; font-size: 1.5rem;"><i class="fa-solid fa-handshake-angle"></i></div>
+                        <h3 style="font-size: 2.2rem; color: var(--white); margin-bottom: 1.5rem;">On-Retainer Support</h3>
+                        <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; line-height: 1.7;">Ongoing, flexible assistance for program management, data troubleshooting, and staff support.</p>
+                        <a href="contact.html" class="btn btn-premium" style="margin-top: 2rem; padding: 0.8rem 1.5rem; font-size: 0.9rem;">Learn More</a>
                     </div>
                 </div>
                 
@@ -163,34 +228,52 @@
         </div>
     </section>
 
-    <section class="additional-support" style="padding: 6rem 0; background: var(--primary); text-align: center; color: var(--white);">
-        <div class="container" style="max-width: 1000px; margin: 0 auto;">
-            <div class="section-header fade-in" style="margin-bottom: 4rem;">
-                <h2 style="font-size: 2.8rem; color: var(--white);">Additional Support</h2>
-                <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto;">Beyond core consulting, we support the digital presence of community businesses.</p>
+
+
+    <section class="additional-support" style="position: relative; padding: 10rem 0; background: var(--primary); overflow: hidden; color: var(--white);">
+        <!-- Background Layer -->
+        <div class="support-bg-media" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:0;">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1400" alt="Digital Support" style="width:100%; height:100%; object-fit:cover; opacity: 0.15; filter: grayscale(1);">
+            <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: radial-gradient(circle at center, transparent 0%, rgba(15, 23, 42, 0.9) 100%);"></div>
+        </div>
+
+        <div class="container" style="max-width: 1000px; margin: 0 auto; position: relative; z-index: 1; text-align: center;">
+            <div class="section-header reveal-up" style="margin-bottom: 4rem; text-align: center; margin-left: auto; margin-right: auto;">
+                <div class="section-badge" style="color: var(--glow);">Growth & Community</div>
+                <h2 style="font-size: 3.5rem; color: var(--white);">Additional Support</h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.7); max-width: 700px; margin: 0 auto;">Beyond core consulting, we empower the digital presence and economic growth of community businesses.</p>
             </div>
-            <div class="support-list fade-in" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;">
-                <div class="support-item-pill">
-                    <i class="fa-solid fa-laptop-code"></i> Website development for community businesses
+            <div class="support-list reveal-up" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; transition-delay: 0.3s;">
+                <div class="support-item-pill glass-card" style="padding: 1.2rem 2.5rem; border-radius: 100px; background: rgba(255,255,255,0.05); color: var(--white); border: 1px solid rgba(255,255,255,0.1); font-weight: 500;">
+                    <i class="fa-solid fa-laptop-code" style="color: var(--glow); margin-right: 0.8rem;"></i> Website development
                 </div>
-                <div class="support-item-pill">
-                    <i class="fa-solid fa-store"></i> Support for starting small businesses
+                <div class="support-item-pill glass-card" style="padding: 1.2rem 2.5rem; border-radius: 100px; background: rgba(255,255,255,0.05); color: var(--white); border: 1px solid rgba(255,255,255,0.1); font-weight: 500;">
+                    <i class="fa-solid fa-store" style="color: var(--glow); margin-right: 0.8rem;"></i> Small business setup
                 </div>
-                <div class="support-item-pill">
-                    <i class="fa-solid fa-wifi"></i> Basic digital presence setup
+                <div class="support-item-pill glass-card" style="padding: 1.2rem 2.5rem; border-radius: 100px; background: rgba(255,255,255,0.05); color: var(--white); border: 1px solid rgba(255,255,255,0.1); font-weight: 500;">
+                    <i class="fa-solid fa-wifi" style="color: var(--glow); margin-right: 0.8rem;"></i> Digital presence
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta">
-        <div class="container" style="text-align: center;">
-            <div class="fade-in">
-                <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Ready to simplify your systems?</h2>
-                <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+
+    <section class="cta" style="position: relative; padding: 12rem 0; background: var(--primary); overflow: hidden; color: var(--white); text-align: center;">
+        <div class="cta-bg-media" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:0;">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600" alt="Consulting Success" style="width:100%; height:100%; object-fit:cover; opacity: 0.25;">
+            <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.4) 100%);"></div>
+        </div>
+
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="reveal-up">
+                <div class="section-badge" style="color: var(--glow);">Ready to Begin?</div>
+                <h2 style="font-size: 3.5rem; margin-bottom: 2rem; color: var(--white);">Ready to simplify your systems?</h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 3rem;">Let's discuss how we can create clear pathways for your program's data and operations.</p>
+                <a href="contact.html" class="btn btn-premium" style="padding: 1.2rem 4rem; font-size: 1.2rem;">Start a Conversation</a>
             </div>
         </div>
     </section>
+
 
     <footer class="footer">
         <div class="container">
