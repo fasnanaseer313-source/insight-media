@@ -568,9 +568,17 @@ nav.scrolled {
 }
 
 @media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        padding: 8rem 0 4rem;
+    }
+    .hero-badge {
+        margin-bottom: 1rem;
+    }
     .hero-title {
-        font-size: 2.8rem;
-        line-height: 1.3;
+        font-size: 2.4rem !important;
+        line-height: 1.2;
+        margin-bottom: 1rem;
     }
 }
 
@@ -603,6 +611,19 @@ nav.scrolled {
 @media (max-width: 768px) {
     .hero-title::after {
         display: none !important;
+    }
+    .hero-tagline {
+        font-size: 1.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+    .hero-description {
+        font-size: 1rem !important;
+        margin-bottom: 2rem !important;
+        line-height: 1.6 !important;
+    }
+    .btn-premium {
+        padding: 1rem 2rem !important;
+        font-size: 1rem !important;
     }
 }
 
@@ -1561,15 +1582,48 @@ section {
     .wws-section {
         padding: 8rem 0;
     }
+    .wws-marquee-container {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 2.5rem 0;
+        cursor: grab;
+        display: block !important;
+    }
+    .wws-marquee-container:active {
+        cursor: grabbing;
+    }
+    .wws-marquee-container::-webkit-scrollbar {
+        display: none;
+    }
+    .wws-marquee-track {
+        display: flex !important;
+        width: max-content !important;
+        animation: none !important;
+        flex-wrap: nowrap !important;
+    }
+    #wws-grid-clone {
+        display: flex !important;
+    }
     .wws-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 1.2rem;
+        display: flex !important;
+        gap: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+    .wws-card {
+        width: 300px !important; /* Fixed width for consistent marquee */
+        flex-shrink: 0 !important;
+        transform: none !important;
     }
     .wws-card-inner {
-        padding: 2rem 1.5rem;
+        padding: 2.5rem 1.5rem;
     }
     .wws-card-inner h3 {
-        font-size: 1.15rem;
+        font-size: 1.25rem !important;
+        white-space: normal !important;
+        line-height: 1.4;
     }
     .wws-detail-panel {
         width: 100%;
@@ -1679,6 +1733,30 @@ section {
         max-width: 400px;
         width: 100%;
         margin: 0 auto;
+        aspect-ratio: auto !important; /* Allow growing */
+        height: auto !important;
+        min-height: auto !important;
+        padding: 2.5rem 1.5rem !important; /* Reduced padding */
+    }
+    .focus-content {
+        padding: 0 !important;
+    }
+    .focus-content h3 {
+        font-size: 1.8rem !important; /* Smaller titles on mobile */
+    }
+    .focus-content p {
+        font-size: 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    .outcome-section {
+        padding-top: 1.5rem !important;
+        margin-top: 1rem !important;
+    }
+    .outcome-text {
+        font-size: 1.1rem !important;
+    }
+    .icon-pill {
+        margin-bottom: 2rem !important;
     }
 }
 
@@ -1761,22 +1839,78 @@ section {
 
 .focus-content {
     position: relative;
-    z-index: 3; /* Content above background and overlay */
+    z-index: 3;
     padding: 1.5rem;
-    color: #ffffff; /* High contrast white text */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
 }
 
 .focus-content h3 {
     color: #ffffff;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .focus-content p {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Service Card Icon Pill Style */
+.icon-pill {
+    width: 80px;
+    height: 44px;
+    background: #ffffff;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 4;
+}
+
+.icon-pill i {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+/* Outcome Section */
+.outcome-section {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    margin-top: auto;
+}
+
+.outcome-label {
+    font-weight: 700;
+    color: var(--glow);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 0.8rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.outcome-text {
+    color: #ffffff;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    line-height: 1.4;
 }
 
 .focus-list {
@@ -1927,7 +2061,7 @@ section {
 
 .why-us.active::after {
     opacity: 1;
-    animation: lightStrike 3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation: lightStrike 3s cubic-bezier(0.2, 0.8, 0.2, 1) 1.5s forwards;
 }
 
 @keyframes lightStrike {

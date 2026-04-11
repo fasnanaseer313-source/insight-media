@@ -365,4 +365,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.2 });
 
     focusCards.forEach(card => focusObserver.observe(card));
+
+    // --- Enhanced Mobile Marquee JS ---
+    const wwsContainer = document.querySelector('.wws-marquee-container');
+    if (wwsContainer && wwsGrid) {
+        let isMoving = true;
+        let lastScrollPos = 0;
+        let resumeTimer;
+        
+        // Use a small speed variable for subtle movement
+        const scrollSpeed = 1.0; 
+
+        function marqueeLoop() {
+            if (isMoving && window.innerWidth <= 1024) {
+                wwsContainer.scrollLeft += scrollSpeed;
+                
+                const gridWidth = wwsGrid.offsetWidth;
+                if (gridWidth > 0 && wwsContainer.scrollLeft >= gridWidth) {
+                    wwsContainer.scrollLeft = 0;
+                }
+            }
+            requestAnimationFrame(marqueeLoop);
+        }
+
+        // Detect user interaction and pause/resume
+        const pauseAuto = () => {
+            isMoving = false;
+            clearTimeout(resumeTimer);
+        };
+
+        const resumeAuto = () => {
+            resumeTimer = setTimeout(() => {
+                isMoving = true;
+            }, 2000); // 2 seconds delay after manual interaction
+        };
+
+        wwsContainer.addEventListener('touchstart', pauseAuto, { passive: true });
+        wwsContainer.addEventListener('touchend', resumeAuto, { passive: true });
+        wwsContainer.addEventListener('mousedown', pauseAuto);
+        wwsContainer.addEventListener('mouseup', resumeAuto);
+        
+        // Initial start
+        setTimeout(() => {
+            requestAnimationFrame(marqueeLoop);
+        }, 1000);
+    }
+
 });
