@@ -99,61 +99,61 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             icon: 'fa-solid fa-feather-pointed',
             title: 'First Nations Employment & Training',
-            desc: 'We partner with First Nations employment and training programs to build practical, culturally grounded systems that connect community members with meaningful career pathways.',
+            desc: 'We work alongside First Nations employment and training programs to build practical, community-centered systems that help connect people with meaningful career pathways.',
             features: [
-                'Employment program design & workflow optimization',
-                'Client tracking systems with cultural sensitivity',
-                'Training delivery frameworks tailored to community needs',
-                'Job readiness & skills assessment tools',
-                'Partnership development with local employers'
+                'Building practical workflows that support day-to-day staff work',
+                'Defining meaningful metrics that reflect community progress',
+                'Practical support for connecting community members with training',
+                'Simple, usable tools for tracking program outcomes',
+                'Grounding program systems in community values'
             ]
         },
         {
             icon: 'fa-solid fa-building-columns',
-            title: 'Ontario Works Delivery Teams',
-            desc: 'Supporting OW delivery teams with streamlined processes, practical metrics, and systems that reduce administrative burden while improving client outcomes.',
+            title: 'Ontario Works Support Teams',
+            desc: 'Supporting social assistance teams with streamlined processes and practical systems that reduce administrative burden while focusing on what matters most for people.',
             features: [
-                'Case management workflow simplification',
-                'Outcome tracking & reporting dashboards',
-                'Inter-agency referral process design',
-                'Staff training & capacity building programs',
-                'Compliance & accountability frameworks'
+                'Building clear, manageable workflows for frontline staff',
+                'Defining meaningful metrics that simplify reporting',
+                'Practical support for connecting people with community services',
+                'Focused, usable systems built with communities',
+                'Aligning program data with community priorities'
             ]
         },
         {
             icon: 'fa-solid fa-people-group',
             title: 'Community Program Staff',
-            desc: 'Equipping frontline staff with intuitive tools and clear processes so they can focus on what matters most — serving their community.',
+            desc: 'Equipping frontline teams with intuitive tools and clear processes so they can focus on supporting their community, not managing complex data.',
             features: [
-                'User-friendly data entry & tracking systems',
-                'Clear process documentation & manuals',
-                'Workload management tools & templates',
-                'Team communication & coordination frameworks',
-                'Professional development pathways'
+                'Defining clear systems that support day-to-day work',
+                'Practical tools for tracking program health',
+                'Grounding systems in real-world program experience',
+                'Support for clear, natural communication flows',
+                'Usable templates designed with frontline staff'
             ]
         },
         {
             icon: 'fa-solid fa-user-tie',
             title: 'Managers & Directors',
-            desc: 'Empowering program leaders with data-driven decision tools, clear performance metrics, and strategic planning frameworks.',
+            desc: 'Supporting program leads with practical tools for decision-making, clear metrics that reflect real needs, and supportive planning frameworks.',
             features: [
-                'Executive dashboards & visual reporting',
-                'Strategic planning & goal-setting frameworks',
-                'Budget alignment & resource optimization',
-                'Staff performance & development systems',
-                'Board reporting & stakeholder communication'
+                'Clear visual tools that reflect what truly matters to communities',
+                'Support for practical planning grounded in community reality',
+                'Building systems that support team growth and confidence',
+                'Grounded insights to help focus resources where they work best',
+                'Practical support for community-driven reporting'
             ]
         },
         {
             icon: 'fa-solid fa-landmark',
             title: 'Band Administration',
-            desc: 'Building efficient governance and administrative frameworks that honour community values while meeting operational and regulatory requirements.',
+            desc: 'Building efficient governance and administrative frameworks that honour community values and respect First Nations data sovereignty.',
             features: [
-                'Administrative process modernization',
-                'Policy development & documentation',
-                'Financial tracking & accountability systems',
-                'Community engagement & feedback frameworks',
-                'Data sovereignty & OCAP compliance'
+                'Building clear, practical administrative systems',
+                'Practical support for community-driven policies',
+                'Systems that reflect community values and accountability',
+                'Support for community-controlled data systems',
+                'Practical application of OCAP and data sovereignty'
             ]
         }
     ];

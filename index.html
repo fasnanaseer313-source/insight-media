@@ -15,7 +15,11 @@
     <nav id="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <span class="logo-text"><span class="logo-accent">Insight</span> Pathways Consulting</span>
+                <img src="assets/images/glowing-logo-extracted.png" alt="IPC Logo" class="nav-logo-icon">
+                <div class="logo-stack">
+                    <span class="logo-line-top"><span class="logo-accent">Insight</span> Pathways</span>
+                    <span class="logo-line-bottom">Consulting</span>
+                </div>
             </a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">home</a></li>
@@ -33,28 +37,31 @@
 
     <header class="hero">
         <div class="hero-background">
-            <video autoplay muted loop playsinline class="hero-video">
-                <source src="assets/videos/hero-bg.mp4" type="video/mp4">
-            </video>
             <div class="hero-overlay"></div>
         </div>
         <div class="container hero-container">
-            <div class="hero-content">
-                <div class="hero-badge reveal">Expert Consulting</div>
-                <h1 class="hero-title reveal-3d" data-text="Insight Pathways Consulting">
-                    Insight Pathways Consulting
-                </h1>
-                <p class="hero-tagline reveal">Simplifying complex systems into clear, practical pathways</p>
-                <p class="hero-description reveal">
-                    Supporting First Nations and community programs with practical systems,
-                    <span>meaningful metrics</span>, and community-driven data approaches.
-                </p>
-                <div class="hero-actions reveal">
-                    <a href="contact.html" class="btn btn-premium">
-                        <span>Start a Conversation</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+            <div class="hero-stack">
+                <div class="hero-identity reveal">
+                    <img src="assets/images/logo-animated.svg" alt="IPC Logo" class="hero-logo-large">
                 </div>
+                <div class="hero-text-centered">
+                    <h1 class="hero-title reveal-3d" data-text="Building clear, practical pathways together">
+                        Building clear, practical pathways together
+                    </h1>
+                    <p class="hero-description reveal">
+                        We work alongside communities to understand, design, and support systems that reflect real needs and deliver meaningful outcomes.
+                    </p>
+                    <div class="hero-actions reveal">
+                        <a href="contact.html" class="btn btn-premium">
+                            <span>Start a Conversation</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Large watermark logo behind the stack -->
+            <div class="hero-watermark">
+                <span class="watermark-text">IPC</span>
             </div>
         </div>
     </header>
@@ -63,10 +70,9 @@
     <section class="premium-services-wrapper">
         <div class="sticky-container">
             <div class="section-header section-header-centered reveal-up">
-                <span class="section-badge">Expert Solutions</span>
+                <span class="section-badge">Practical Systems</span>
                 <h2>Our Services</h2>
-                <p>We provide specialized consulting to help First Nations and community organizations build stronger,
-                    more effective systems for their people.</p>
+                <p>We work alongside communities to understand, design, and support systems that reflect real needs and deliver meaningful outcomes.</p>
             </div>
 
             <div class="service-stack-group">
@@ -75,24 +81,24 @@
                     <div class="card-icon"><i class="fa-solid fa-sitemap"></i></div>
                     <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
                         alt="System Design">
-                    <h3>System Design</h3>
-                    <p>Untangling complex program architectures to create intuitive workflows that support your team's everyday work.</p>
+                    <h3>Practical Systems</h3>
+                    <p>Building clear, practical systems that support day-to-day work.</p>
                 </div>
                 <!-- Card 2 -->
                 <div class="luxury-card" data-side="right">
                     <div class="card-icon"><i class="fa-solid fa-compass"></i></div>
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
-                        alt="Strategic Planning">
-                    <h3>Strategic Planning</h3>
-                    <p>Co-creating long-term pathways that align program goals with community values and sustainable growth.</p>
+                        alt="Practical Approach Planning">
+                    <h3>Implementation Support</h3>
+                    <p>Supporting real-world application, not just planning.</p>
                 </div>
                 <!-- Card 3 -->
                 <div class="luxury-card" data-side="left">
                     <div class="card-icon"><i class="fa-solid fa-chart-pie"></i></div>
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
                         alt="Data & Metrics">
-                    <h3>Data & Metrics</h3>
-                    <p>Moving beyond basic compliance to track indicators that truly reflect the progress and health of your community.</p>
+                    <h3>Data Sovereignty</h3>
+                    <p>Defining meaningful metrics that reflect what truly matters to communities.</p>
                 </div>
                 <!-- Card 4 -->
                 <div class="luxury-card" data-side="right">
@@ -108,7 +114,7 @@
                     <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=800"
                         alt="Program Evaluation">
                     <h3>Program Evaluation</h3>
-                    <p>Providing clear insights into program effectiveness to drive continuous improvement and transparency.</p>
+                    <p>Supporting clear insights into program effectiveness to drive continuous improvement and transparency.</p>
                 </div>
                 <!-- Card 6 -->
                 <div class="luxury-card" data-side="right">
@@ -190,8 +196,8 @@
                         <div class="wws-icon-wrap">
                             <i class="fa-solid fa-building-columns"></i>
                         </div>
-                        <h3>Ontario Works Delivery Teams</h3>
-                        <p class="wws-card-desc">Supporting social assistance delivery with practical systems</p>
+                        <h3>Ontario Works Support Teams</h3>
+                        <p class="wws-card-desc">Supporting social assistance support with practical systems</p>
                         <div class="wws-card-arrow">
                             <i class="fa-solid fa-arrow-right"></i>
                         </div>
@@ -285,9 +291,9 @@
         </div>
         <div class="container relative-z">
             <div class="section-header reveal-up">
-                <span class="section-badge">Expertise</span>
+                <span class="section-badge">How We Support</span>
                 <h2>Core Focus Areas</h2>
-                <p>Deep expertise in the intersections of community service and practical data management.</p>
+                <p>Grounded in real program experience, we focus on practical, usable systems built with communities.</p>
             </div>
             <div class="focus-grid">
                 <div class="focus-card focus-reveal" style="transition-delay: 0.1s;">
@@ -302,7 +308,7 @@
                         <p>Building frameworks that work in the real world.</p>
                         <ul class="focus-list">
                             <li><i class="fa-solid fa-circle-check"></i> Employment frameworks</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Client tracking systems</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Community tracking systems</li>
                             <li><i class="fa-solid fa-circle-check"></i> Referral processes</li>
                         </ul>
                     </div>
@@ -359,7 +365,7 @@
                             <div class="feature-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
                             <div class="feature-text">
                                 <h3>Practical, not theoretical</h3>
-                                <p>We build solutions based on field experience, not just abstract academic models.</p>
+                                <p>We build systems based on field experience, not just abstract academic models.</p>
                             </div>
                         </div>
                         <div class="feature-item">
@@ -396,11 +402,11 @@
         <div class="container">
             <div class="cta-card reveal-3d">
                 <div class="cta-content">
-                    <h2>Ready to transform your programs?</h2>
+                    <h2>Ready to build practical systems that work?</h2>
                     <p>Let's simplify your systems and amplify your community's impact together.</p>
                     <a href="contact.html" class="btn btn-premium">
                         <span>Start a Conversation</span>
-                        <i class="fa-solid fa-paper-plane"></i>
+                        <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
@@ -412,6 +418,7 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
+                        <img src="assets/images/glowing-logo-extracted.png" alt="IPC Logo" class="nav-logo-icon">
                         <span class="logo-accent">Insight</span> Pathways Consulting
                     </a>
                     <p>Simplifying complex systems into clear and practical pathways for First Nations and community

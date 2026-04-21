@@ -216,22 +216,74 @@ nav.scrolled {
     width: 100%;
 }
 
+.nav-brand-center {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    font-size: 1.6rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
+    gap: 0.9rem;
     color: var(--primary);
     text-decoration: none;
 }
 
+.logo-stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 0.95;
+    margin-top: 2px;
+}
+
+.logo-line-top {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    white-space: nowrap;
+}
+
+.logo-line-bottom {
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--primary);
+    opacity: 0.9;
+    margin-top: 1px;
+}
+
+@media (max-width: 600px) {
+    .logo-line-top {
+        font-size: 1.2rem;
+    }
+    .logo-line-bottom {
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+    }
+}
+
 .nav-logo-icon {
-    height: 40px;
-    width: auto;
-    mix-blend-mode: multiply;
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
     display: block;
+    border-radius: 50%;
 }
 
 .logo-accent {
@@ -385,7 +437,10 @@ nav.scrolled {
 .footer-brand .logo {
     color: var(--white);
     margin-bottom: 1.5rem;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    width: fit-content;
 }
 
 .footer-brand .logo-accent {
@@ -521,9 +576,12 @@ nav.scrolled {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.4) 100%);
+    background: radial-gradient(circle at 70% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 10% 80%, rgba(15, 23, 42, 0.03) 0%, transparent 40%),
+                var(--bg-light);
     z-index: 0;
 }
+
 
 
 .hero-container {
@@ -531,12 +589,79 @@ nav.scrolled {
     z-index: 2;
 }
 
-.hero-content {
-    max-width: 900px;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform-style: preserve-3d;
-    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+.hero-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.hero-identity {
+    margin-bottom: 3rem;
+}
+
+.hero-logo-large {
+    width: 320px;
+    height: auto;
+    filter: brightness(0.2); /* Make it dark for light theme */
+}
+
+.hero-text-centered {
+    max-width: 1000px;
+}
+
+.hero-title {
+    font-size: 5.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(to bottom, #0F172A, #334155);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+.watermark-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 30rem;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 4rem;
+    }
+    .hero-logo-large {
+        width: 250px;
+    }
+    .watermark-text {
+        font-size: 15rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.8rem !important;
+    }
+    .hero-description {
+        font-size: 1.1rem !important;
+    }
 }
 
 

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCAP® Principles Explained | Insight Pathways Consulting</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0f2240;
+            --teal: #2a9d8f;
+            --teal-light: #3dbfb0;
+            --stone: #f5f3ef;
+            --stone-dark: #e8e0d5;
+            --white: #ffffff;
+            --text-navy: #1a2a40;
+            --text-muted: #5a6a80;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--stone);
+            color: var(--text-navy);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Hero Section */
+        .ocap-hero {
+            background: radial-gradient(circle at top right, rgba(42, 157, 143, 0.15), transparent),
+                        radial-gradient(circle at bottom left, rgba(61, 191, 176, 0.1), transparent),
+                        var(--navy);
+            padding: 10rem 0 8rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .ocap-hero .hero-bubbles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            animation: pulse-bubble 8s infinite alternate;
+        }
+
+        @keyframes pulse-bubble {
+            from { transform: scale(1) translate(0, 0); }
+            to { transform: scale(1.2) translate(20px, -20px); }
+        }
+
+        .ocap-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .ocap-hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        .ocap-hero h1 span {
+            color: var(--teal-light);
+        }
+
+        .ocap-hero p {
+            font-size: 1.4rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s forwards 0.3s;
+        }
+
+        .pills {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s forwards 0.6s;
+        }
+
+        .pill {
+            padding: 0.5rem 1.2rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Overview Section */
+        .overview-section {
+            padding: 8rem 0;
+            background: var(--stone);
+        }
+
+        .overview-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
+
+        .overview-section h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--navy);
+        }
+
+        .overview-section p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 4rem;
+        }
+
+        .quote-card {
+            background: var(--navy);
+            padding: 4rem;
+            border-radius: 20px;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+            box-shadow: 0 30px 60px rgba(15, 34, 64, 0.15);
+        }
+
+        .quote-card p {
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--white);
+            margin-bottom: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-card::before {
+            content: "\f10d";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 12rem;
+            color: rgba(255,255,255,0.05);
+            line-height: 1;
+            z-index: 0;
+        }
+
+        /* Principles Grid */
+        .principles-section {
+            padding: 8rem 0 4rem;
+            background: var(--stone-dark);
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .principle-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .principle-card .letter {
+            font-size: 4rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            color: var(--teal);
+            display: block;
+            margin-bottom: 1rem;
+            transition: all 0.5s;
+        }
+
+        .principle-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+            transition: all 0.5s;
+        }
+
+        .principle-card p {
+            color: var(--text-muted);
+            transition: all 0.5s;
+        }
+
+        .principle-card:hover, .principle-card.active {
+            background: var(--navy);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(15, 34, 64, 0.2);
+        }
+
+        .principle-card:hover .letter, .principle-card.active .letter {
+            color: var(--teal-light);
+        }
+
+        .principle-card:hover h3, .principle-card.active h3,
+        .principle-card:hover p, .principle-card.active p {
+            color: var(--white);
+        }
+
+        /* Detail Panel */
+        .detail-panel {
+            background: var(--navy);
+            border-radius: 20px;
+            color: var(--white);
+            padding: 4rem;
+            display: none;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            margin-top: 2rem;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.3);
+            animation: slideUp 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .detail-panel.active {
+            display: grid;
+        }
+
+        .detail-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 15rem;
+            font-weight: 900;
+            color: rgba(255,255,255,0.05);
+            line-height: 0.8;
+            margin-bottom: 0;
+        }
+
+        .detail-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--teal-light);
+        }
+
+        .detail-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .detail-column h4 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .detail-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detail-column li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .detail-column li i {
+            color: var(--teal-light);
+            margin-top: 0.3rem;
+        }
+
+        .staff-tip {
+            margin-top: 3rem;
+            padding: 2rem;
+            border-left: 4px solid var(--teal);
+            background: rgba(255,255,255,0.03);
+            border-radius: 0 15px 15px 0;
+        }
+
+        .staff-tip strong {
+            display: block;
+            color: var(--teal-light);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Checklist Section */
+        .checklist-section {
+            padding: 8rem 0;
+            background: var(--stone);
+        }
+
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .checklist-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .checklist-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+        }
+
+        .checklist-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--navy);
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .check-item:hover {
+            background: var(--bg-soft);
+        }
+
+        .check-box {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--stone-dark);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s;
+            background: var(--white);
+        }
+
+        .check-box i {
+            color: var(--white);
+            font-size: 0.8rem;
+            display: none;
+        }
+
+        .check-item.checked .check-box {
+            background: var(--teal);
+            border-color: var(--teal);
+        }
+
+        .check-item.checked .check-box i {
+            display: block;
+        }
+
+        .check-item.checked span {
+            text-decoration: line-through;
+            color: var(--text-muted);
+        }
+
+        .progress-container {
+            margin-top: auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--stone-dark);
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+
+        .progress-bar-bg {
+            height: 8px;
+            background: var(--stone-dark);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: var(--teal);
+            width: 0;
+            transition: width 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* Footer */
+        .ocap-footer {
+            background: var(--navy);
+            padding: 6rem 0 4rem;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+        }
+
+        .ocap-footer p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .ocap-footer a {
+            color: var(--teal-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .ocap-footer a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--teal-light);
+            transition: all 0.3s;
+        }
+
+        .ocap-footer a:hover::after {
+            width: 100%;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .detail-panel {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 3rem 2rem;
+            }
+
+            .detail-columns {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .detail-letter {
+                display: none;
+            }
+
+            .ocap-hero h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/glowing-logo-extracted.png" alt="IPC Logo" class="nav-logo-icon">
+                <span class="logo-text"><span class="logo-accent">Insight</span> Pathways Consulting</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">home</a></li>
+                <li><a href="services.html">services</a></li>
+                <li><a href="about.html">about</a></li>
+                <li><a href="resources.html">resources</a></li>
+                <li><a href="contact.html" class="nav-cta">contact</a></li>
+            </ul>
+            <div class="mobile-toggle" id="mobile-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="ocap-hero">
+        <div class="hero-bubbles">
+            <div class="bubble" style="width: 400px; height: 400px; top: -100px; right: -50px;"></div>
+            <div class="bubble" style="width: 300px; height: 300px; bottom: -50px; left: -50px; animation-delay: -2s;"></div>
+        </div>
+        <div class="container ocap-hero-content">
+            <div class="pills">
+                <div class="pill">5 min read</div>
+                <div class="pill">First Nations Program Staff</div>
+            </div>
+            <h1>Understanding <span>OCAP®</span> Principles</h1>
+            <p>A practical guide to Ownership, Control, Access, and Possession of First Nations data.</p>
+        </div>
+    </header>
+
+    <section class="overview-section">
+        <div class="container overview-container">
+            <span class="label">Overview</span>
+            <h2>What is OCAP®?</h2>
+            <p>OCAP® is a set of standards that establish how First Nations data should be collected, protected, used, or shared. They are the gold standard for respecting First Nations data sovereignty.</p>
+            
+            <div class="quote-card reveal-up">
+                <p>“OCAP® reflects First Nations’ commitments to use and manage information in a way that brings benefit to the community while minimizing any possible harm.”</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="principles-section">
+        <div class="container">
+            <div class="section-header section-header-centered">
+                <span class="label">The Core Concepts</span>
+                <h2>The Four Principles</h2>
+            </div>
+
+            <div class="principles-grid">
+                <!-- Ownership -->
+                <div class="principle-card" data-principle="ownership">
+                    <span class="letter">O</span>
+                    <h3>Ownership</h3>
+                    <p>The relationship of a First Nation to its cultural knowledge, data, and information.</p>
+                </div>
+                <!-- Control -->
+                <div class="principle-card" data-principle="control">
+                    <span class="letter">C</span>
+                    <h3>Control</h3>
+                    <p>The right of First Nations to seek control over all aspects of research and information management.</p>
+                </div>
+                <!-- Access -->
+                <div class="principle-card" data-principle="access">
+                    <span class="letter">A</span>
+                    <h3>Access</h3>
+                    <p>The right of First Nations to have access to information and data about themselves.</p>
+                </div>
+                <!-- Possession -->
+                <div class="principle-card" data-principle="possession">
+                    <span class="letter">P</span>
+                    <h3>Possession</h3>
+                    <p>The physical control of data, ensuring it is held by First Nations people and their organizations.</p>
+                </div>
+            </div>
+
+            <!-- Detail Panel -->
+            <div class="detail-panel" id="detail-panel">
+                <div class="detail-letter" id="detail-letter">O</div>
+                <div class="detail-content">
+                    <h3 id="detail-title">Ownership</h3>
+                    <p id="detail-desc">Refer to the relationship of First Nations to their cultural knowledge, data, and information.</p>
+                    
+                    <div class="detail-columns">
+                        <div class="detail-column">
+                            <h4>What it means</h4>
+                            <ul id="detail-means">
+                                <!-- JS injected -->
+                            </ul>
+                        </div>
+                        <div class="detail-column">
+                            <h4>In practice</h4>
+                            <ul id="detail-practice">
+                                <!-- JS injected -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="staff-tip">
+                        <strong id="tip-title">Program Staff Tip</strong>
+                        <p id="tip-text">Ensure your organization's policies explicitly recognize community ownership of program data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="checklist-section">
+        <div class="container">
+            <div class="section-header section-header-centered">
+                <span class="label">Implementation</span>
+                <h2>Self-Assessment Checklist</h2>
+                <p>Use these checkpoints to review how your program aligns with OCAP® principles.</p>
+            </div>
+
+            <div class="checklist-grid">
+                <!-- Ownership Checklist -->
+                <div class="checklist-card" data-category="ownership">
+                    <h3>Ownership</h3>
+                    <div class="check-item">
+                        <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                        <span>Do we acknowledge community ownership in all agreements?</span>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                        <span>Is the community aware of what data we collect?</span>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                        <span>Are protocols in place for cultural knowledge?</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-text">
+                            <span>Progress</span>
+                            <span class="progress-count">0 / 3</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Control Checklist -->
+                <div class="checklist-card" data-category="control">
+                    <h3>Control</h3>
+                    <div class="check-item">
+                        <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                        <span>Does the community approve research designs?</span>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                        <span>Is there a community-led data oversight board?</span>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                        <span>Are reporting processes community-approved?</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-text">
+                            <span>Progress</span>
+                            <span class="progress-count">0 / 3</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Access Checklist -->
+                <div class="checklist-card" data-category="access">
+                    <h3>Access</h3>
+                    <div class="check-item">
+                        <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                        <span>Can community members view their own data easily?</span>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                        <span>Are data reports accessible to community leaders?</span>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                        <span>Do we have a protocol for data requests?</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-text">
+                            <span>Progress</span>
+                            <span class="progress-count">0 / 3</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Possession Checklist -->
+                <div class="checklist-card" data-category="possession">
+                    <h3>Possession</h3>
+                    <div class="check-item">
+                        <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                        <span>is data stored on community-controlled servers?</span>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                        <span>Do we have physical control over data backups?</span>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                        <span>Is data stewardship legally defined?</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-text">
+                            <span>Progress</span>
+                            <span class="progress-count">0 / 3</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="ocap-footer">
+        <div class="container">
+            <p>This explainer was produced by Insight Pathways Consulting. OCAP® is a registered trademark of the First Nations Information Governance Centre (FNIGC).</p>
+            <a href="https://insightpathwaysconsulting.ca" target="_blank">insightpathwaysconsulting.ca</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const principleData = {
+                ownership: {
+                    letter: 'O',
+                    title: 'Ownership',
+                    desc: 'Refers to the relationship of First Nations to their cultural knowledge, data, and information.',
+                    means: [
+                        'Collective ownership of information',
+                        'Direct control over intellectual property',
+                        'Sovereignty over community knowledge'
+                    ],
+                    practice: [
+                        'Developing data sharing agreements',
+                        'Defining community data protocols',
+                        'Ownership clauses in all contracts'
+                    ],
+                    tip: 'Think of data like traditional items; the community owns the history and the rights, even when it is used by others.'
+                },
+                control: {
+                    letter: 'C',
+                    title: 'Control',
+                    desc: 'Affirms that First Nations are entitled to seek control over all aspects of research and information management.',
+                    means: [
+                        'Decision-making power over data',
+                        'Control over the full data lifecycle',
+                        'Authourity over research design'
+                    ],
+                    practice: [
+                        'Community review boards for data',
+                        'Approval steps for any data publication',
+                        'Oversight of third-party research'
+                    ],
+                    tip: 'Control is about having the final word on how data is collected and what it is used for.'
+                },
+                access: {
+                    letter: 'A',
+                    title: 'Access',
+                    desc: 'First Nations must have access to information and data about themselves and their communities, regardless of where it is held.',
+                    means: [
+                        'Right to view and manage data',
+                        'No restrictions on community access',
+                        'Ability to correct personal information'
+                    ],
+                    practice: [
+                        'Creating user-friendly data portals',
+                        'Clear data request procedures',
+                        'Regular community data reporting'
+                    ],
+                    tip: 'Access ensures that information collected about the community always finds its way back to the community.'
+                },
+                possession: {
+                    letter: 'P',
+                    title: 'Possession',
+                    desc: 'While ownership identifies the relationship in principle, possession or stewardship refers to the physical control of data.',
+                    means: [
+                        'Physical stewardship of data',
+                        'Control over server locations',
+                        'Tangible data security and storage'
+                    ],
+                    practice: [
+                        'Investing in community-based servers',
+                        'Managing local data backups',
+                        'Legal stewardship status agreements'
+                    ],
+                    tip: 'Possession is the "where" of data. Having data on your own servers is the strongest form of OCAP® protection.'
+                }
+            };
+
+            // Principles Interaction
+            const cards = document.querySelectorAll('.principle-card');
+            const panel = document.getElementById('detail-panel');
+            const detailLetter = document.getElementById('detail-letter');
+            const detailTitle = document.getElementById('detail-title');
+            const detailDesc = document.getElementById('detail-desc');
+            const detailMeans = document.getElementById('detail-means');
+            const detailPractice = document.getElementById('detail-practice');
+            const tipContent = document.getElementById('tip-text');
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const key = card.getAttribute('data-principle');
+                    const data = principleData[key];
+
+                    // Update panel
+                    detailLetter.textContent = data.letter;
+                    detailTitle.textContent = data.title;
+                    detailDesc.textContent = data.desc;
+                    tipContent.textContent = data.tip;
+
+                    detailMeans.innerHTML = data.means.map(m => `<li><i class="fa-solid fa-arrow-right"></i> ${m}</li>`).join('');
+                    detailPractice.innerHTML = data.practice.map(p => `<li><i class="fa-solid fa-arrow-right"></i> ${p}</li>`).join('');
+
+                    // Toggle active state
+                    cards.forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                    panel.classList.add('active');
+
+                    // Scroll to panel
+                    setTimeout(() => {
+                        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 50);
+                });
+            });
+
+            // Checklist Interaction
+            const checklistCards = document.querySelectorAll('.checklist-card');
+            
+            checklistCards.forEach(card => {
+                const items = card.querySelectorAll('.check-item');
+                const progressFill = card.querySelector('.progress-bar-fill');
+                const progressCount = card.querySelector('.progress-count');
+
+                items.forEach(item => {
+                    item.addEventListener('click', () => {
+                        item.classList.toggle('checked');
+                        updateProgress();
+                    });
+                });
+
+                function updateProgress() {
+                    const checkedCount = card.querySelectorAll('.check-item.checked').length;
+                    const totalCount = items.length;
+                    const percentage = (checkedCount / totalCount) * 100;
+
+                    progressFill.style.width = percentage + '%';
+                    progressCount.textContent = `${checkedCount} / ${totalCount}`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
