@@ -374,7 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let resumeTimer;
         
         // Use a small speed variable for subtle movement
-        const scrollSpeed = 1.0; 
+        const scrollSpeed = 0.8; 
 
         function marqueeLoop() {
             if (isMoving && window.innerWidth <= 1024) {
@@ -410,5 +410,19 @@ document.addEventListener('DOMContentLoaded', () => {
             requestAnimationFrame(marqueeLoop);
         }, 1000);
     }
+
+    // --- Luxury Card Click to Scroll ---
+    const luxuryCards = document.querySelectorAll('.luxury-card');
+    luxuryCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const targetSection = document.getElementById('home-services');
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 
 });
