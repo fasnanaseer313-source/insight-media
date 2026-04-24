@@ -774,19 +774,6 @@ nav.scrolled .nav-links a.active {
     overflow: visible; /* Ensure text is never clipped */
 }
 
-.footer-brand .logo .logo-stack {
-    overflow: visible;
-    white-space: nowrap;
-}
-
-.footer-brand .logo .logo-line-top,
-.footer-brand .logo .logo-line-bottom {
-    color: var(--white);
-    opacity: 1;
-    white-space: nowrap;
-    display: block;
-}
-
 .footer-brand .logo-accent {
     color: var(--glow);
 }
