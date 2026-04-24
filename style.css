@@ -359,7 +359,7 @@ nav.scrolled .logo {
     max-width: 1400px;
     background: var(--white);
     border-radius: 40px;
-    padding: 6rem 5rem;
+    padding: 4rem 2rem;
     box-shadow: 0 40px 120px rgba(15, 23, 42, 0.08);
     position: relative;
     overflow: hidden;
@@ -368,15 +368,16 @@ nav.scrolled .logo {
 
 .hero-split {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 4rem;
+    justify-content: center;
+    gap: 1.5rem;
+    text-align: center;
 }
 
 /* Left Side Content */
 .hero-content-main {
-    flex: 1.2;
-    text-align: left;
+    display: contents; /* Allow children to be siblings of the logo for ordering */
 }
 
 .brand-name-premium {
@@ -386,9 +387,12 @@ nav.scrolled .logo {
     line-height: 1.1;
     color: var(--primary);
     letter-spacing: -0.02em;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     position: relative;
-    display: inline-block;
+    display: block;
+    width: 100%;
+    text-align: center;
+    order: 1;
     opacity: 0;
     animation: 
         fadeUpIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards,
@@ -436,9 +440,12 @@ nav.scrolled .logo {
     font-size: 2.5rem;
     font-weight: 500;
     color: var(--secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
     letter-spacing: -0.01em;
     text-transform: none;
+    order: 2;
+    width: 100%;
+    text-align: center;
     opacity: 0;
     animation: fadeUpIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards 0.2s;
 }
@@ -447,11 +454,13 @@ nav.scrolled .logo {
     font-family: 'Inter', sans-serif;
     font-size: 1.15rem;
     color: var(--text-muted);
-    max-width: 550px;
-    margin-bottom: 3rem;
-    line-height: 1.9;
+    max-width: 650px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.8;
     font-weight: 300;
     letter-spacing: 0.01em;
+    order: 3;
+    text-align: center;
     opacity: 0;
     animation: fadeUpIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards 0.4s;
 }
@@ -469,6 +478,7 @@ nav.scrolled .logo {
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     box-shadow: 0 15px 30px rgba(15, 23, 42, 0.15);
     opacity: 0;
+    order: 5;
     animation: 
         scaleInPremium 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards 0.6s,
         buttonBounce 3s ease-in-out infinite 2s; /* Subtle bounce added */
@@ -492,16 +502,17 @@ nav.scrolled .logo {
 
 /* Right Side Visual */
 .hero-visual-main {
-    flex: 0.8;
+    order: 4;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .logo-circle-premium {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 320px;
+    height: 320px;
     background: transparent;
     display: flex;
     justify-content: center;
@@ -531,6 +542,20 @@ nav.scrolled .logo {
     animation: floatUpDown 8s ease-in-out infinite;
 }
 
+.brand-wrapper {
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-cta-wrapper {
+    order: 5;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 @keyframes floatUpDown {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-25px); }
@@ -553,26 +578,23 @@ nav.scrolled .logo {
 
 @media (max-width: 768px) {
     .hero-split {
-        flex-direction: column;
-        text-align: center;
+        gap: 1rem;
     }
     
-    .hero-content-main {
-        text-align: center;
-    }
-
     .brand-name-premium {
-        font-size: 2.5rem; /* Reduced to fit perfectly on mobile */
-        margin-bottom: 1.5rem;
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
     }
 
     .hero-headline-premium {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
+        margin-bottom: 0.75rem;
     }
     
     .hero-description-premium {
-        margin: 0 auto 2.5rem;
         font-size: 1rem;
+        max-width: 95%;
+        margin-bottom: 1.5rem;
     }
 
     .hero-container {
@@ -583,7 +605,7 @@ nav.scrolled .logo {
     .logo-circle-premium {
         width: 250px;
         height: 250px;
-        margin-top: 1rem;
+        margin: 0.5rem auto 1.5rem; /* Center and move closer to content */
     }
     
     .hero-premium {
@@ -788,6 +810,14 @@ nav.scrolled .nav-links a.active {
 .social-links {
     display: flex;
     gap: 1rem;
+}
+
+.footer-copyright-brand {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: 1.5rem;
+    margin-bottom: 0 !important;
+    font-family: 'Inter', sans-serif;
 }
 
 .social-links a {
