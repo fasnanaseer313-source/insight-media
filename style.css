@@ -243,7 +243,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    height: 130px;
+    height: 150px;
     display: flex;
     align-items: center;
     z-index: 1000;
@@ -252,7 +252,7 @@ nav {
 }
 
 nav.scrolled {
-    height: 100px;
+    height: 110px;
     background: var(--glass);
     backdrop-filter: var(--blur);
     border-bottom: 1px solid var(--glass-border);
@@ -308,21 +308,23 @@ nav.scrolled .mobile-toggle {
 }
 
 .logo-icon-wrapper {
-    width: 60px;
-    height: 60px;
+    width: 110px;
+    height: 110px;
     background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     transition: var(--transition-smooth);
+    border-radius: 50%;
+    overflow: hidden; /* This 'cuts' the image through its round edge */
 }
 
-/* Removed scroll-based resizing to prevent zooming effect */
+/* Stable logo size - no zooming effects on scroll */
 
 .nav-logo-icon-new {
-    width: 100%;
-    height: 100%;
+    width: 320%; /* Zooms in to fill the circular frame with the actual logo mark */
+    height: 320%;
     object-fit: contain;
     filter: contrast(1.05);
     transition: var(--transition-smooth);
@@ -337,17 +339,17 @@ nav.scrolled .mobile-toggle {
 
 .logo-line-top {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.02em;
     display: flex;
-    gap: 0.6rem;
+    gap: 0.8rem;
 }
 
 .logo-line-bottom {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -417,21 +419,21 @@ nav.scrolled .logo-consulting {
     }
     
     .logo-new {
-        gap: 0.5rem;
+        gap: 0.6rem;
     }
     .logo-icon-wrapper {
-        width: 45px;
-        height: 45px;
+        width: 55px;
+        height: 55px;
     }
     .nav-logo-icon-new {
         transform: none; /* No zooming on mobile */
-        clip-path: none;
+        clip-path: circle(50%); /* Restored to remove white rectangle on mobile */
     }
     .logo-line-top, .logo-line-bottom {
-        font-size: 0.95rem;
+        font-size: 1.1rem;
     }
     .logo-line-top {
-        gap: 0.3rem;
+        gap: 0.4rem;
     }
 }
 
