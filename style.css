@@ -285,17 +285,34 @@ nav.scrolled {
     }
 }
 
-.logo {
+.logo-premium {
     display: flex;
     align-items: center;
-    gap: 0.9rem;
-    color: var(--white);
     text-decoration: none;
     transition: var(--transition-smooth);
 }
 
-nav.scrolled .logo {
-    color: var(--primary);
+.nav-logo-svg {
+    height: 60px;
+    width: auto;
+    display: block;
+    transition: var(--transition-smooth);
+    /* Make the logo white on transparent nav for visibility over hero bg */
+    filter: brightness(0) invert(1);
+}
+
+nav.scrolled .nav-logo-svg {
+    height: 50px;
+    filter: none; /* Return to original professional colors on white background */
+}
+
+@media (max-width: 768px) {
+    .nav-logo-svg {
+        height: 45px;
+    }
+    nav.scrolled .nav-logo-svg {
+        height: 40px;
+    }
 }
 
 .logo-stack {
