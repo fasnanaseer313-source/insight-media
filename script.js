@@ -45,50 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // --- Hero Background Motion (Particles) ---
-    const particleContainer = document.getElementById('particles-js');
-    if (particleContainer) {
-        for (let i = 0; i < 30; i++) {
-            createParticle(particleContainer);
-        }
-    }
-
-    function createParticle(container) {
-        const particle = document.createElement('div');
-        particle.className = 'light-particle';
-        
-        const size = Math.random() * 4 + 2;
-        const posX = Math.random() * 100;
-        const posY = Math.random() * 100;
-        const delay = Math.random() * 10;
-        const duration = Math.random() * 20 + 10;
-
-        particle.style.cssText = `
-            position: absolute;
-            width: ${size}px;
-            height: ${size}px;
-            background: rgba(212, 175, 55, 0.4);
-            border-radius: 50%;
-            top: ${posY}%;
-            left: ${posX}%;
-            filter: blur(2px);
-            animation: floatParticle ${duration}s infinite linear;
-            animation-delay: -${delay}s;
-        `;
-        
-        container.appendChild(particle);
-    }
-
-    // --- 3D Mouse Tilt (Optional but Premium) ---
-    const heroContent = document.querySelector('.hero-content');
-    if (heroContent && window.matchMedia('(pointer: fine)').matches) {
-        window.addEventListener('mousemove', (e) => {
-            const xAxis = (window.innerWidth / 2 - e.clientX) / 50;
-            const yAxis = (window.innerHeight / 2 - e.clientY) / 50;
-            heroContent.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-        });
-    }
-
 
     // =======================================
     // WHO WE SUPPORT — 3D Cards & Detail Panel
