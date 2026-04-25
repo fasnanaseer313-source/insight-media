@@ -395,7 +395,9 @@ nav.scrolled .logo-consulting {
         top: 100%;
         left: 0;
         width: 100%;
-        background: var(--white);
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         padding: 2.5rem;
         box-shadow: var(--shadow-premium);
         border-top: 1px solid var(--glass-border);
@@ -2712,19 +2714,32 @@ section {
     }
 
     .wws-card {
-        width: 280px !important; /* Adjusted for iPhone resolution */
+        width: 260px !important; /* Slightly narrower for better iPhone fit */
+        min-height: 380px !important; /* Ensure enough height for all content */
         flex-shrink: 0 !important;
-        transform: none !important; /* Tilt is desktop only, but keep scale/translate for hover/active */
+        transform: none !important;
     }
 
     .wws-card-inner {
-        padding: 2.5rem 1.5rem;
+        padding: 1.8rem 1.2rem; /* Reduced padding to fit more content */
+        gap: 0.7rem;
+    }
+
+    .wws-icon-wrap {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
     }
 
     .wws-card-inner h3 {
-        font-size: 1.25rem !important;
+        font-size: 1.15rem !important;
         white-space: normal !important;
-        line-height: 1.4;
+        line-height: 1.3;
+    }
+
+    .wws-card-desc {
+        font-size: 0.85rem !important;
+        line-height: 1.5;
     }
 
     .wws-detail-panel {
