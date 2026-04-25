@@ -2678,12 +2678,10 @@ section {
     }
 
     .wws-marquee-container {
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        padding: 2.5rem 0;
+        width: 100%;
+        margin-left: 0;
+        overflow: hidden;
+        padding: 2rem 0;
         cursor: grab;
         display: block !important;
     }
@@ -2699,7 +2697,7 @@ section {
     .wws-marquee-track {
         display: flex !important;
         width: max-content !important;
-        animation: none !important;
+        animation: scrollContinuous 30s linear infinite !important; /* Re-enabled animation for mobile */
         flex-wrap: nowrap !important;
     }
 
@@ -2709,15 +2707,14 @@ section {
 
     .wws-grid {
         display: flex !important;
-        gap: 1.5rem !important;
-        padding-right: 1.5rem !important;
+        gap: 1.2rem !important;
+        padding-right: 1.2rem !important;
     }
 
     .wws-card {
-        width: 300px !important;
-        /* Fixed width for consistent marquee */
+        width: 280px !important; /* Adjusted for iPhone resolution */
         flex-shrink: 0 !important;
-        transform: none !important;
+        transform: none !important; /* Tilt is desktop only, but keep scale/translate for hover/active */
     }
 
     .wws-card-inner {
@@ -4840,30 +4837,8 @@ section {
 
 @media (max-width: 768px) {
     .wws-card {
-        width: 280px;
-        height: 380px;
-        padding: 2.5rem 1.2rem;
-        border-radius: 24px;
-    }
-    .wws-card h3 {
-        font-size: 1.3rem;
-        margin-bottom: 0.8rem;
-    }
-    .wws-card-desc {
-        font-size: 0.9rem;
-    }
-    .wws-icon-wrap {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-    .wws-marquee-container {
-        margin-top: 3rem;
-        padding: 1rem 0;
-    }
-    .wws-grid {
-        gap: 1.5rem;
-        padding-right: 1.5rem;
+        width: 320px;
+        height: 420px;
+        padding: 3rem 1.5rem;
     }
 }
