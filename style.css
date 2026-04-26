@@ -4340,12 +4340,33 @@ section {
     overflow: hidden;
     padding: 3rem 0;
     margin-top: 5rem;
+    position: relative;
+    /* Smooth manual scrolling on mobile */
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 1024px) {
+    .wws-marquee-container {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none; /* Firefox */
+    }
+    
+    .wws-marquee-container::-webkit-scrollbar {
+        display: none; /* Chrome/Safari/Edge */
+    }
 }
 
 .wws-marquee-track {
     display: flex;
     width: max-content;
     animation: scrollContinuous 40s linear infinite;
+}
+
+@media (max-width: 1024px) {
+    .wws-marquee-track {
+        animation: none; /* Disable CSS animation on mobile to allow JS control and manual swipe */
+    }
 }
 
 .wws-marquee-track:hover {
@@ -4370,6 +4391,13 @@ section {
     perspective: 1500px;
 }
 
+@media (max-width: 1024px) {
+    .wws-grid {
+        gap: 1.5rem;
+        padding: 0 2rem; /* Initial padding to help centering */
+    }
+}
+
 .wws-card {
     position: relative;
     width: 400px;
@@ -4390,6 +4418,16 @@ section {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
     transition: transform 0.1s ease-out, box-shadow 0.5s ease;
     transform-style: preserve-3d;
+}
+
+@media (max-width: 1024px) {
+    .wws-card {
+        scroll-snap-align: center;
+        width: 75vw; /* Slightly reduced for better neighbor visibility */
+        max-width: 350px;
+        height: 420px;
+        padding: 3rem 1.5rem;
+    }
 }
 
 .wws-card:hover {

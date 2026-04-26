@@ -326,14 +326,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const wwsContainer = document.querySelector('.wws-marquee-container');
     if (wwsContainer && wwsGrid) {
         let isMoving = true;
-        let lastScrollPos = 0;
         let resumeTimer;
         
         // Use a small speed variable for subtle movement
-        const scrollSpeed = 0.8; 
+        const scrollSpeed = 0.6; 
 
         function marqueeLoop() {
             if (isMoving && window.innerWidth <= 1024) {
+                // Ensure snapping is off during automatic smooth motion to prevent jitter
+                wwsContainer.style.scrollSnapType = 'none';
+                
                 wwsContainer.scrollLeft += scrollSpeed;
                 
                 const gridWidth = wwsGrid.offsetWidth;
@@ -348,18 +350,35 @@ document.addEventListener('DOMContentLoaded', () => {
         const pauseAuto = () => {
             isMoving = false;
             clearTimeout(resumeTimer);
+            // Enable snapping for manual interaction
+            wwsContainer.style.scrollSnapType = 'x mandatory';
         };
 
         const resumeAuto = () => {
+            clearTimeout(resumeTimer);
             resumeTimer = setTimeout(() => {
                 isMoving = true;
-            }, 2000); // 2 seconds delay after manual interaction
+                // Snapping will be disabled inside marqueeLoop when it starts moving again
+            }, 3000); // 3 seconds delay after manual interaction
         };
 
+        // Touch Events
         wwsContainer.addEventListener('touchstart', pauseAuto, { passive: true });
         wwsContainer.addEventListener('touchend', resumeAuto, { passive: true });
+        
+        // Mouse Events for testing on desktop with mobile view
         wwsContainer.addEventListener('mousedown', pauseAuto);
-        wwsContainer.addEventListener('mouseup', resumeAuto);
+        window.addEventListener('mouseup', (e) => {
+            if (!isMoving) resumeAuto();
+        });
+
+        // Prevent layout break on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1024) {
+                wwsContainer.style.scrollSnapType = '';
+                wwsContainer.scrollLeft = 0;
+            }
+        });
         
         // Initial start
         setTimeout(() => {
