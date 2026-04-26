@@ -1611,6 +1611,113 @@ section {
     margin-bottom: 1rem;
 }
 
+/* --- Premium CTA Section --- */
+.cta-premium {
+    position: relative;
+    padding: 12rem 0;
+    background: var(--primary);
+    overflow: hidden;
+    color: var(--white);
+    text-align: center;
+}
+
+.cta-premium h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    color: var(--white);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-premium p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 650px;
+    margin: 0 auto 3.5rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 1024px) {
+    .cta-premium {
+        padding: 8rem 0;
+    }
+    .cta-premium h2 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-premium {
+        padding: 6rem 1.5rem;
+    }
+    .cta-premium h2 {
+        font-size: 2rem;
+        line-height: 1.3;
+        margin-bottom: 1.5rem;
+    }
+    .cta-premium p {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+    }
+    .cta-premium .btn-premium {
+        width: 100%;
+        justify-content: center;
+        padding: 1.2rem 2rem;
+    }
+}
+
+/* --- Responsive CTA Layouts --- */
+.cta-section {
+    padding: 10rem 0;
+    background: var(--bg-soft);
+}
+
+.cta-card {
+    background: var(--primary);
+    padding: 6rem 4rem;
+    border-radius: 40px;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(15, 23, 42, 0.2);
+}
+
+.cta-card h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+}
+
+.cta-card p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 6rem 0;
+    }
+    .cta-card {
+        padding: 4rem 2rem;
+        border-radius: 30px;
+    }
+    .cta-card h2 {
+        font-size: 2rem;
+    }
+    .cta-card p {
+        font-size: 1.05rem;
+        margin-bottom: 2.5rem;
+    }
+    .cta-card .btn-premium {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 /* --- Premium Scroll Services Section --- */
 .premium-services-wrapper {
     position: relative;
@@ -4893,5 +5000,80 @@ section {
         width: 320px;
         height: 420px;
         padding: 3rem 1.5rem;
+    }
+}/* --- Support List & Pills (Services Page) --- */
+.additional-support .section-header h2 {
+    color: var(--white);
+    letter-spacing: 0.05em;
+}
+
+.additional-support .section-header p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.support-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.support-item-pill {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 3rem;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    min-width: 320px;
+}
+
+.support-item-pill i {
+    color: #D4AF37; /* Gold to match brand */
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.support-item-pill:hover {
+    background: rgba(30, 41, 59, 0.95);
+    transform: translateY(-5px);
+    border-color: var(--glow);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .additional-support {
+        padding: 6rem 0 !important;
+    }
+
+    .additional-support .section-header h2 {
+        font-size: 2rem !important;
+        margin-bottom: 1.5rem;
+    }
+
+    .support-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+        padding: 0 2rem;
+    }
+
+    .support-item-pill {
+        width: 100%;
+        max-width: 100%;
+        justify-content: flex-start;
+        padding: 1.6rem 2rem;
+        font-size: 1.15rem;
     }
 }
