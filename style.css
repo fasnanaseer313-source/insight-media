@@ -1498,8 +1498,11 @@ nav.scrolled .mobile-toggle .bar {
     }
 
     .btn-premium {
-        padding: 1rem 2rem !important;
-        font-size: 1rem !important;
+        padding: 1rem 1.5rem !important;
+        font-size: 0.95rem !important;
+        width: auto !important;
+        max-width: 100%;
+        justify-content: center;
     }
 }
 
@@ -1546,6 +1549,7 @@ nav.scrolled .mobile-toggle .bar {
     border-radius: 100px;
     font-weight: 600;
     font-size: 1.1rem;
+    white-space: nowrap;
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
     transition: var(--transition-hover);
 }
@@ -1661,9 +1665,11 @@ section {
         margin-bottom: 2.5rem;
     }
     .cta-premium .btn-premium {
-        width: 100%;
+        width: auto;
+        display: inline-flex;
+        margin: 0 auto;
         justify-content: center;
-        padding: 1.2rem 2rem;
+        padding: 1.2rem 2.5rem;
     }
 }
 
@@ -1713,7 +1719,9 @@ section {
         margin-bottom: 2.5rem;
     }
     .cta-card .btn-premium {
-        width: 100%;
+        width: auto;
+        display: inline-flex;
+        margin: 0 auto;
         justify-content: center;
     }
 }
@@ -5072,7 +5080,7 @@ section {
     .support-item-pill {
         width: 100%;
         max-width: 100%;
-        justify-content: flex-start;
+        justify-content: center;
         padding: 1.6rem 2rem;
         font-size: 1.15rem;
     }
