@@ -5071,39 +5071,44 @@ section {
     }
 
     .support-list {
-        flex-direction: column;
-        align-items: center;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
         gap: 1.2rem;
-        padding: 0 2rem;
+        padding: 0 !important;
+        width: 100% !important;
+        margin: 3rem 0 0 0 !important;
     }
 
     .support-item-pill {
-        width: 100%;
-        max-width: 100%;
-        display: grid !important;
-        /* Using a fixed-width column for text (180px) ensures icons stay perfectly aligned */
-        grid-template-columns: 1fr 2rem 180px 1fr; 
+        display: inline-flex !important;
         align-items: center !important;
-        gap: 0.8rem;
+        justify-content: center !important;
+        width: 320px !important; /* Fixed width ensures perfect alignment and centering */
+        max-width: 90% !important;
+        margin: 0 auto !important;
+        gap: 1rem;
         padding: 1.2rem 1rem;
-        font-size: 0.95rem; /* Reduced to ensure it fits on one line */
+        font-size: 0.95rem;
         line-height: 1;
+        white-space: nowrap;
+        border-radius: 100px;
     }
 
     .support-item-pill i {
-        grid-column: 2;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         margin: 0 !important;
         color: #D4AF37;
+        flex-shrink: 0;
     }
 
     .support-item-pill span {
-        grid-column: 3;
         display: block;
-        white-space: nowrap; /* Prevents wrapping as requested */
         line-height: 1;
         text-align: left;
         margin: 0 !important;
