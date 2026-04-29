@@ -5143,3 +5143,18 @@ html, body {
         max-width: 2560px; /* Expands properly up to 4K without creating a massive frame */
     }
 }
+
+/* Contact Email Link */
+.contact-email-link {
+    display: inline-block;
+    color: var(--text-muted) !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-email-link:hover {
+    color: var(--primary) !important;
+    text-decoration: underline;
+    text-decoration-color: var(--primary);
+    text-underline-offset: 4px;
+}
