@@ -1,0 +1,22 @@
+# Robots.txt for Insight Pathways Consulting
+# https://www.insightpathwaysco.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.insightpathwaysco.com/sitemap.xml
+
+# Disallow crawling of asset directories that aren't content
+Disallow: /assets/videos/
+Disallow: /.git/
+
+# Allow all search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
